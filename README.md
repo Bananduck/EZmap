@@ -38,7 +38,7 @@ git clone https://github.com/Bananduck/EZmap.git
 ```
 If it doesn't work or doesn't resolve it, use:
 ```
-https://github.com/Bananduck/EZmap
+git clone https://github.com/Bananduck/EZmap
 ```
 Now access to the file where we cloned
 ```
