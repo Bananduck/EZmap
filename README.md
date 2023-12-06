@@ -1,7 +1,7 @@
 ![alt text](https://cdn.discordapp.com/attachments/913287460916703272/1182006223453823006/background.png?ex=65832014&is=6570ab14&hm=20bcd907590bdbec0f0e965aeeafa1edb7cae57e112bae4e0b03a65b50829357&)
 
 # What is EZMap?
-EZmap tool is a tool to scan for ports with any IP using nmap. It as a very easy interactive system you can use if you can't manually use commands to scan it.
+EZmap tool is a tool to scan for ports with any IP using nmap. It has a very easy interactive system you can use if you can't manually use commands to scan it.
 
 # Instruction
 ## 1 - Installing git
