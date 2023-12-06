@@ -53,4 +53,4 @@ python EZMAP.py
 
 # Bug report
 If you encounter an error or bug, You can go bug report them. Or contact me for more information
-[![Discord Presence](https://lanyard.cnrad.dev/api/:id)](https://discord.com/users/913286154806243339)
+[![Discord Presence](https://lanyard.cnrad.dev/api/913286154806243339)](https://discord.com/users/913286154806243339)
