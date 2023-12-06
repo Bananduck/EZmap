@@ -4,7 +4,6 @@ import sys
 import platform
 import subprocess
 import ipaddress
-import nmap
 
 LandingText = """
           ___.-------.___             ||
@@ -53,23 +52,6 @@ def check_python_nmap():
             print("Invalid option, exit.")
             exit(1)
 
-def print_os_message():
-    current_os = platform.system()
-
-    if current_os == "Windows":
-        print("[*] OS: Windows | Skipping sudo check.")
-    elif current_os == "Linux":
-        print("[*] OS: Linux")
-        check_sudo()
-    else:
-        print(f"[*] OS: ({current_os}).")
-        print("[-] This OS is not supported for this tool!")
-
-def check_sudo():
-    if os.getpid() != 0:
-        print("[-] Please run the file with sudo! (sudo EZMAP.py)")
-        sys.exit(1)
-
 def is_valid_ip(ip):
     try:
         ipaddress.ip_address(ip)
@@ -78,6 +60,7 @@ def is_valid_ip(ip):
         return False
 
 def run_intense_scan(target_ip):
+    import nmap
     nm = nmap.PortScanner()
     nm.scan(hosts=target_ip, arguments='-T4 -A -v')  # Adjust the arguments as needed
 
@@ -96,42 +79,50 @@ def run_intense_scan(target_ip):
         print('\n')
 
 def run_intense_udp_scan(target_ip):
+    import nmap
     nm = nmap.PortScanner()
     nm.scan(hosts=target_ip, arguments='sS -sU -T4 -A -v')
 
 def run_intense_udp_tcpall_scan(target_ip):
+    import nmap
     nm = nmap.PortScanner()
     nm.scan(hosts=target_ip, arguments='-p 1-65535 -T4 -A -v')
 
 def run_intense_udp_noping_scan(target_ip):
+    import nmap
     nm = nmap.PortScanner()
     nm.scan(hosts=target_ip, arguments='-T4 -A -v -Pn')
     
 def run_ping_scan(target_ip):
+    import nmap
     nm = nmap.PortScanner()
     nm.scan(hosts=target_ip, arguments='-sn')
 
 def run_quick_scan(target_ip):
+    import nmap
     nm = nmap.PortScanner()
     nm.scan(hosts=target_ip, arguments='-T4 -F')
 
 def run_quickplus_scan(target_ip):
+    import nmap
     nm = nmap.PortScanner()
     nm.scan(hosts=target_ip, arguments='-sV -T4 -O -F --version-light')
     
 def run_racetroute_scan(target_ip):
+    import nmap
     nm = nmap.PortScanner()
     nm.scan(hosts=target_ip, arguments='-sn --traceroute')
 
 def run_regular_scan(target_ip):
+    import nmap
     nm = nmap.PortScanner()
     nm.scan(hosts=target_ip, arguments='')
 
 def run_slow_scan(target_ip):
+    import nmap
     nm = nmap.PortScanner()
     nm.scan(hosts=target_ip, arguments='-sS -sU -T4 -A -v -PE -PP -PS80,443 -PA3389 -PU40125 -PY -g 53 --script "default or (discovery and safe)"')
 
-# Add methods for other scan options...
 
 def display_text(option, target_ip):
     if 1 <= option <= len(texts):
@@ -214,7 +205,7 @@ def clear_screen():
 os.system("cls")
 print(LandingText)
 sleep(.25)
-print_os_message()
+print("[!] Make sure that you are running this file with sudo! (sudo python EZMAP.py)")
 sleep(1)
 check_python_nmap()
 sleep(1)
