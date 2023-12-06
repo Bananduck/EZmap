@@ -27,10 +27,6 @@ For Fedora, Arch, etc. (you can replace `dnf` if you are using `pacman` or `yum`
 ```
 sudo dnf install python3 python3-pip
 ```
-For termux
-```
-pkg install python3 python3-pip
-```
 
 ## 3 - Clone the repository and begin using it
 ```
@@ -50,9 +46,29 @@ ls
 ```
 sudo python EZMAP.py
 ```
-NOTE: If you didn't installed nmap library from python yet. Please install it by using this command:
+NOTE: If you didn't installed nmap library from python & nmap program yet. Please install it by using this command:
 ```
 pip install python-nmap
+```
+```
+sudo <apt/yum/dnf> install nmap
+```
+
+# For termux
+```
+pkg install git
+```
+```
+pkg install python python3-pip
+```
+```
+pkg install nmap
+```
+```
+cd EZmap
+```
+```
+python EZMAP.py
 ```
 # Bug report
 If you encounter an error or bug, You can go bug report them. Or contact me for more information
