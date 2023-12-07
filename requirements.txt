@@ -1,0 +1,9 @@
+os
+sys
+colorama
+subprocess
+nmap
+platform
+time
+ipaddress
+socket
